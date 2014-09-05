@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  # root 'lists#index'
+  root 'lists#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
