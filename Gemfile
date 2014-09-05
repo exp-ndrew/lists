@@ -7,7 +7,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'zurb-foundation'
+gem 'foundation-rails'
 
 group :development do
   gem 'better_errors'

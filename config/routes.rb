@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   
   root 'lists#index'
 
+  
+  get 'lists/new' => 'lists#new'
+  get 'lists/new' => 'lists#new'
+  post 'lists' => 'lists#create'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

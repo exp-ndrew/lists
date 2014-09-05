@@ -1,3 +1,3 @@
-class List < Active_Record::Base
+class List < ActiveRecord::Base
 
 end
