@@ -1,10 +1,16 @@
+<div id="add_list" class="reveal-modal tiny" data-reveal>
+  <a class="close-reveal-modal">&#215;</a>
+  <%= render 'form' %>
+</div>
+
 <div class="row">
+
   <div class="small-6 large-centered columns">
     <ul class="stack button-group">
       <% @lists.each do |list| %>
         <li><a href="#" class="button"><%= list.name %></a></li>
       <% end %>
-    <li><a href="#" class="button expand">Add List</a></li>
+    <li><a href="#" data-reveal-id="add_list" class="button expand">Add List</a></li>
     </ul>
 
 
