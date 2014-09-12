@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
 
   post 'lists/:id' => 'items#create'
-  get 'lists/:id/edit' => 'items#edit'
-  get 'lists/:id/complete' => 'items#update'
-  get 'lists/:id/uncomplete' => 'items#update'
+  get 'items/edit/:id' => 'items#edit'
+  get 'items/:id/complete' => 'items#update'
+  get 'items/:id/uncomplete' => 'items#update'
+  
+  delete 'lists/:list_id/items/:id' => 'items#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -9,18 +9,18 @@
     <ul class="stack button-group">
 
       <li>
-        <ul class="button-group">
-          <li><a href="/" class="button alert">Back</a></li>
-          <li><a href="#" data-reveal-id="add_item" class="button alert">Add Item</a></li>
-          <li><a href="#" class="button alert">Clear Completed</a></li>
+        <a href="/" class="button split"><%= @list.name %><span data-dropdown="drop_top"></span></a>
+        <ul id="drop_top" class="f-dropdown" data-dropdown-content>
+          <li><a href="#" data-reveal-id="add_item">Add Item</a></li>
+          <li><a href="#">Clear Completed</a></li>
         </ul>
       </li>
       <% @list.items.each do |item| %>
         <li>
-          <a href="/items/<%= item.id %>/complete" class="button split"><%= item.name %><span data-dropdown="drop"></span></a>
-          <ul id="drop" class="f-dropdown" data-dropdown-content>
+          <a href="/items/<%= item.id %>/complete" class="button secondary split"><%= item.name %><span data-dropdown="drop_<%= item.id %>"></span></a>
+          <ul id="drop_<%= item.id %>" class="f-dropdown" data-dropdown-content>
             <li><a href="#">Edit Item</a></li>
-            <li><a href="/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
+            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
           </ul>
         </li>
       <% end %>
