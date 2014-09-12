@@ -1,0 +1,24 @@
+<div class="row">
+
+  <div class="small-6 large-centered columns">
+    <ul class="stack button-group">
+
+      <li>
+        <ul class="button-group">
+          <li><a href="/lists/<%= @list.id %>" class="button alert">Back</a></li>
+          <li><a href="#" data-reveal-id="add_item" class="button alert">Clear Completed</a></li>
+        </ul>
+      </li>
+
+      <% @list.items.each do |item| %>
+        <li><a href="#" class="button split"><%= item.name %> <span data-dropdown="drop"></span></a>
+            <ul id="drop" class="f-dropdown" data-dropdown-content>
+              <li><a href="#">Edit Item</a></li>
+              <li><a href="#">Delete Item</a></li>
+            </ul></li>
+      <% end %>
+    </ul>
+
+
+  </div>
+</div>

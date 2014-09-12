@@ -16,4 +16,11 @@ class ListsController < ApplicationController
     render('lists/show.html.erb')
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to '/'
+  end
+
+
 end

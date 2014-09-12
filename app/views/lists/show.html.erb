@@ -12,12 +12,17 @@
         <ul class="button-group">
           <li><a href="/" class="button alert">Back</a></li>
           <li><a href="#" data-reveal-id="add_item" class="button alert">Add Item</a></li>
-          <li><a href="#" class="button alert">Delete Items</a></li>
+          <li><a href="#" class="button alert">Clear Completed</a></li>
         </ul>
       </li>
-
       <% @list.items.each do |item| %>
-        <li><a href="#" class="button"><%= item.name %></a></li>
+        <li>
+          <a href="/items/<%= item.id %>/complete" class="button split"><%= item.name %><span data-dropdown="drop"></span></a>
+          <ul id="drop" class="f-dropdown" data-dropdown-content>
+            <li><a href="#">Edit Item</a></li>
+            <li><a href="/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
+          </ul>
+        </li>
       <% end %>
     </ul>
 

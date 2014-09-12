@@ -7,15 +7,15 @@
 
   <div class="small-6 large-centered columns">
     <ul class="stack button-group">
-      <li>
-        <ul class="button-group">
           <li><a href="#" data-reveal-id="add_list" class="button alert">Add List</a></li>
-          <li><a href="#" class="button alert">Edit List</a></li>
-          <li><a href="#" class="button alert">Delete List</a></li>
-        </ul>
-      </li>
       <% @lists.each do |list| %>
-        <li><a href="/lists/<%= list.id %>" class="button"><%= list.name %></a></li>
+        <li>
+          <a href="/lists/<%= list.id %>" class="button split"><%= list.name %><span data-dropdown="drop_<%= list.id %>"></span></a>
+          <ul id="drop_<%= list.id %>" class="f-dropdown" data-dropdown-content>
+            <li><a href="#">Edit List</a></li>
+            <li><a href="/lists/<%= list.id %>" data-method="delete" data-confirm="Are you sure you want to delete <%= list.name %> and all its tasks?">Delete List</a></li>
+          </ul>
+        </li>
       <% end %>
     </ul>
 

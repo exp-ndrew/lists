@@ -6,4 +6,10 @@ class ItemsController < ApplicationController
     redirect_to("/lists/#{@list.id}")
   end
 
+  def edit
+    @item = Item.new
+    @list = List.find(params[:id])
+    render ('lists/edit.html.erb')
+  end
+
 end
