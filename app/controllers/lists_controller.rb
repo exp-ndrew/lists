@@ -10,4 +10,10 @@ class ListsController < ApplicationController
     redirect_to '/'
   end
 
+  def show
+    @item = Item.new
+    @list = List.find(params[:id])
+    render('lists/show.html.erb')
+  end
+
 end

@@ -4,12 +4,12 @@ An app to keep track of the lists in your life (to-do, grocery, play-, hit-, A-,
 
 ## what
 
-* inspired by the functionality of [Clear](http://realmacsoftware.com/clear)
-* the app uses the [ZURB Foundation](http://foundation.zurb.com) front-end framework
 * users can create/read/update/destroy lists
 * when on a list, users can create/read/update/destroy list items
 * there is a one-to-many relationship between a list and items (a list has many items)
 * and, of course, this is a building block of an experiment I'm working on
+* inspired by the functionality of [Clear](http://realmacsoftware.com/clear)
+* the app uses the [ZURB Foundation](http://foundation.zurb.com) front-end framework
 
 ## setup
 

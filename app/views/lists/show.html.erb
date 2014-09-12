@@ -1,0 +1,25 @@
+<div id="add_item" class="reveal-modal tiny" data-reveal>
+  <a class="close-reveal-modal">&#215;</a>
+  <%= render 'add_item_form' %>
+</div>
+
+<div class="row">
+
+  <div class="small-6 large-centered columns">
+    <ul class="stack button-group">
+
+      <li>
+        <ul class="button-group">
+          <li><a href="#" data-reveal-id="add_item" class="button alert">Add Item</a></li>
+          <li><a href="#" class="button alert">Delete Items</a></li>
+        </ul>
+      </li>
+
+      <% @list.items.each do |item| %>
+        <li><a href="#" class="button"><%= item.name %></a></li>
+      <% end %>
+    </ul>
+
+
+  </div>
+</div>

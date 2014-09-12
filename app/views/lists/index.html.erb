@@ -1,16 +1,22 @@
 <div id="add_list" class="reveal-modal tiny" data-reveal>
   <a class="close-reveal-modal">&#215;</a>
-  <%= render 'form' %>
+  <%= render 'add_list_form' %>
 </div>
 
 <div class="row">
 
   <div class="small-6 large-centered columns">
     <ul class="stack button-group">
+      <li>
+        <ul class="button-group">
+          <li><a href="#" data-reveal-id="add_list" class="button alert">Add List</a></li>
+          <li><a href="#" class="button alert">Edit List</a></li>
+          <li><a href="#" class="button alert">Delete List</a></li>
+        </ul>
+      </li>
       <% @lists.each do |list| %>
-        <li><a href="#" class="button"><%= list.name %></a></li>
+        <li><a href="/lists/<%= list.id %>" class="button"><%= list.name %></a></li>
       <% end %>
-    <li><a href="#" data-reveal-id="add_list" class="button expand">Add List</a></li>
     </ul>
 
 
