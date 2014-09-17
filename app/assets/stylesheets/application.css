@@ -14,3 +14,8 @@
  *= require_self
  *= require foundation_and_overrides
  */
+
+.completed {
+  text-decoration: line-through;
+  color: #ccc !important;
+}

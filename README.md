@@ -8,7 +8,6 @@ An app to keep track of the lists in your life (to-do, grocery, play-, hit-, A-,
 
 ## need to add
 
-* errors on forms
 * flash messages
 * keyboard controls (spacebar/enter: new item, right arrow: back?)
 

@@ -17,6 +17,16 @@ class ItemsController < ApplicationController
     render ('lists/edit.html.erb')
   end
 
+  def update
+    @item = Item.find(params[:id])
+    if @item.completed?
+      @item.update(:completed => false)
+    else
+      @item.update(:completed => true)
+    end
+    redirect_to("/lists/#{@item.list_id}")
+  end
+
   def destroy
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])

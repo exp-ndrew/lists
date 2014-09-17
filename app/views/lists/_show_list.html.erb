@@ -10,9 +10,18 @@
           <li><a href="#">Clear Completed</a></li>
         </ul>
       </li>
-      <% @list.items.each do |item| %>
+      <% @list.items.where(:completed => false).each do |item| %>
         <li>
-          <a href="/items/<%= item.id %>/complete" class="button secondary split"><%= item.name %><span data-dropdown="drop_<%= item.id %>"></span></a>
+          <a href="/items/<%= item.id %>/mark" class="button secondary split"><%= item.name %><span data-dropdown="drop_<%= item.id %>"></span></a>
+          <ul id="drop_<%= item.id %>" class="f-dropdown" data-dropdown-content>
+            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>/edit">Edit Item</a></li>
+            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
+          </ul>
+        </li>
+      <% end %>
+      <% @list.items.where(:completed => true).each do |item| %>
+        <li>
+          <a href="/items/<%= item.id %>/mark" class="button secondary split completed"><%= item.name %><span data-dropdown="drop_<%= item.id %>"></span></a>
           <ul id="drop_<%= item.id %>" class="f-dropdown" data-dropdown-content>
             <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>/edit">Edit Item</a></li>
             <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
