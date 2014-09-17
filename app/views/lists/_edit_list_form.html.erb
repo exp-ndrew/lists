@@ -1,0 +1,7 @@
+<form action="/lists/<%= @list.id %>" method="post">
+  <label for="list_name">Edit <%= @list.name %></label>
+  <input id="list_name" name="list[name]" type="text" value="<%= @list.name %>">
+  <input name="_method" type="hidden" value="patch" />
+  <button class="button expand tiny">Update List</button>
+  <a href="/" class="button secondary expand tiny">Return</a>
+</form> 

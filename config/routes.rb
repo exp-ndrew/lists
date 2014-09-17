@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'lists/' => 'lists#index' # see all lists
   get 'lists/:id/edit' => 'lists#edit' # edit a list name
+  patch 'lists/:id' => 'lists#update' # update a list name
   post 'lists' => 'lists#create' # create a list
   get 'lists/:id' => 'lists#show' # show a list
   delete 'lists/:id' => 'lists#destroy' # delete a list

@@ -1,0 +1,9 @@
+<div id="edit_list" class="reveal-modal tiny" data-reveal>
+  <%= render 'lists/edit_list_form', :list => @list %>
+</div>
+
+<script>
+  $(document).ready(function(){$('#edit_list').foundation('reveal', 'open')});
+</script>
+
+<%= render 'lists/show_list', :@list => @list %>
