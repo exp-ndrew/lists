@@ -17,7 +17,7 @@
         <li>
           <a href="/lists/<%= list.id %>" class="button secondary split"><%= list.name %><span data-dropdown="drop_<%= list.id %>"></span></a>
           <ul id="drop_<%= list.id %>" class="f-dropdown" data-dropdown-content>
-            <li><a href="#">Edit List</a></li>
+            <li><a href="/lists/<%= list.id %>/edit">Edit List</a></li>
             <li><a href="/lists/<%= list.id %>" data-method="delete" data-confirm="Are you sure you want to delete <%= list.name %> and all its tasks?">Delete List</a></li>
           </ul>
         </li>

@@ -16,6 +16,11 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+    @list = List.find(params[:id])
+    render('lists/edit.html.erb')
+  end
+
   def show
     @item = Item.new
     @list = List.find(params[:id])

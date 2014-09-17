@@ -13,23 +13,32 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    @list = List.find(params[:list_id])
-    render ('lists/edit.html.erb')
+    @list = List.find(@item.list_id)
+    render ('items/edit.html.erb')
   end
 
   def update
     @item = Item.find(params[:id])
-    if @item.completed?
-      @item.update(:completed => false)
+    if params.include?(:item)
+      @item.update(params[:item])
+      if @item.save
+        redirect_to("/lists/#{@item.list_id}")
+      else
+        render ('items/edit.html.erb')
+      end
     else
-      @item.update(:completed => true)
+      if @item.completed?
+        @item.update(:completed => false)
+      else
+        @item.update(:completed => true)
+      end
+      redirect_to("/lists/#{@item.list_id}")
     end
-    redirect_to("/lists/#{@item.list_id}")
   end
 
   def destroy
-    @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
+    @list = List.find(@item.list_id)
     @item.destroy
     redirect_to ("/lists/#{@list.id}")
   end

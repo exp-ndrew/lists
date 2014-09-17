@@ -14,8 +14,8 @@
         <li>
           <a href="/items/<%= item.id %>/mark" class="button secondary split"><%= item.name %><span data-dropdown="drop_<%= item.id %>"></span></a>
           <ul id="drop_<%= item.id %>" class="f-dropdown" data-dropdown-content>
-            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>/edit">Edit Item</a></li>
-            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
+            <li><a href="/items/<%= item.id %>/edit">Edit Item</a></li>
+            <li><a href="/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
           </ul>
         </li>
       <% end %>
@@ -23,8 +23,8 @@
         <li>
           <a href="/items/<%= item.id %>/mark" class="button secondary split completed"><%= item.name %><span data-dropdown="drop_<%= item.id %>"></span></a>
           <ul id="drop_<%= item.id %>" class="f-dropdown" data-dropdown-content>
-            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>/edit">Edit Item</a></li>
-            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
+            <li><a href="/items/<%= item.id %>/edit">Edit Item</a></li>
+            <li><a href="/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
           </ul>
         </li>
       <% end %>

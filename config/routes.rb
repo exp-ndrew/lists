@@ -2,20 +2,22 @@ Rails.application.routes.draw do
   
   root 'lists#index'
 
-  get 'lists/' => 'lists#index'
-  get 'lists/new' => 'lists#new'
-  get 'lists/new' => 'lists#new'
-  post 'lists' => 'lists#create'
-  get 'lists/:id' => 'lists#show'
-  delete 'lists/:id' => 'lists#destroy'
+  get 'lists/' => 'lists#index' # see all lists
+  get 'lists/:id/edit' => 'lists#edit' # edit a list name
+  post 'lists' => 'lists#create' # create a list
+  get 'lists/:id' => 'lists#show' # show a list
+  delete 'lists/:id' => 'lists#destroy' # delete a list
 
 
-  post 'lists/:id' => 'items#create'
-  get 'lists/:list_id/items/:id/edit' => 'items#edit'
-  get 'items/:id/mark' => 'items#update'
-  get 'items/:id/mark' => 'items#update'
+  post 'lists/:id' => 'items#create' # add an item to a list
+
+
+  get 'items/:id/edit' => 'items#edit' # edit an item name
+  get 'items/:id/mark' => 'items#update' # mark an item complete
+
+  patch 'items/:id' => 'items#update' # update an item name
   
-  delete 'lists/:list_id/items/:id' => 'items#destroy'
+  delete 'items/:id' => 'items#destroy' # delete an item
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
