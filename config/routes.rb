@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 
   post 'lists/:id' => 'items#create'
-  get 'items/edit/:id' => 'items#edit'
+  get 'lists/:list_id/items/:id/edit' => 'items#edit'
   get 'items/:id/complete' => 'items#update'
   get 'items/:id/uncomplete' => 'items#update'
   

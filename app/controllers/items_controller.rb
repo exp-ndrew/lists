@@ -7,8 +7,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.new
-    @list = List.find(params[:id])
+    @item = Item.find(params[:id])
+    @list = List.find(params[:list_id])
     render ('lists/edit.html.erb')
   end
 

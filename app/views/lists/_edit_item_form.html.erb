@@ -1,4 +1,6 @@
-<form action="/lists/<%= @list.id %>" method="post">
-  <label for="item_name">Edit <%= @item.name %></label>
-  <button class="button alert expand tiny">Update Item</a>
-</form>
+<form action="/items/<%= @item.id %>" method="post">
+  <label for="item_name">Edit an item on <%= @list.name %></label>
+  <input id="item_name" name="item[name]" type="text" value="<%= @item.name %>">
+  <button class="button expand tiny">Update Item</a>
+  <a href="/lists/<%= @list.id %>" class="button expand tiny"><span class="close-reveal-modal">Return</span></a>
+</form> 

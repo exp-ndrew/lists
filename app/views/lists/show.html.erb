@@ -3,29 +3,4 @@
   <%= render 'add_item_form' %>
 </div>
 
-<div class="row">
-
-  <div class="small-6 large-centered columns">
-    <ul class="stack button-group">
-
-      <li>
-        <a href="/" class="button split"><%= @list.name %><span data-dropdown="drop_top"></span></a>
-        <ul id="drop_top" class="f-dropdown" data-dropdown-content>
-          <li><a href="#" data-reveal-id="add_item">Add Item</a></li>
-          <li><a href="#">Clear Completed</a></li>
-        </ul>
-      </li>
-      <% @list.items.each do |item| %>
-        <li>
-          <a href="/items/<%= item.id %>/complete" class="button secondary split"><%= item.name %><span data-dropdown="drop_<%= item.id %>"></span></a>
-          <ul id="drop_<%= item.id %>" class="f-dropdown" data-dropdown-content>
-            <li><a href="#">Edit Item</a></li>
-            <li><a href="/lists/<%= @list.id %>/items/<%= item.id %>" data-method="delete">Delete Item</a></li>
-          </ul>
-        </li>
-      <% end %>
-    </ul>
-
-
-  </div>
-</div>
+<%= render 'show_list', :@list => @list %>
