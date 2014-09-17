@@ -2,6 +2,8 @@
 
 An app to keep track of the lists in your life (to-do, grocery, play-, hit-, A-, or otherwise)
 
+A live example is available at [http://xpndrw-lists.herokuapp.com](http://xpndrw-lists.herokuapp.com).
+
 ## what
 
 * users can create/read/update/destroy lists
