@@ -2,7 +2,7 @@
 
   <div class="small-6 large-centered columns">
     <ul class="stack button-group">
-
+      <%= render('layouts/errors', :object => @item ) %>
       <li>
         <a href="/" class="button split"><%= @list.name %><span data-dropdown="drop_top"></span></a>
         <ul id="drop_top" class="f-dropdown" data-dropdown-content>

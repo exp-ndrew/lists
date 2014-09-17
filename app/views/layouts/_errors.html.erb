@@ -1,9 +1,15 @@
 <% if object.errors.any? %>
-<li class="button alert split">
-  <% object.errors.full_messages.each do |message| %>
-    <ul>
-      <li><%= message %></li>
-    </ul>
-  <% end %>
+  <li>
+    <% if @list.id %>
+      <a href="/lists/<%= @list.id %>" class="button alert split">
+    <% else %>
+      <a href="/" class="button alert split">
+    <% end %>
+    <% object.errors.full_messages.each do |message| %>
+        <ul>
+          <li><%= message %></li>
+        </ul>
+      </a>
+    <% end %>
   </li>
 <% end %>
