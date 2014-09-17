@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+<li class="button alert split">
+  <% object.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+  <% end %>
+  </li>
+<% end %>

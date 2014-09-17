@@ -6,8 +6,14 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.create(params[:list])
-    redirect_to '/'
+    @lists = List.all
+    @list = List.new(params[:list])
+    if @list.save
+      flash[:title] = "#{@list.name} was added."
+      redirect_to '/'
+    else
+      render ('lists/index.html.erb')
+    end
   end
 
   def show
