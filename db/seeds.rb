@@ -33,6 +33,6 @@ Item.create([
     { name: 'You can click the arrows for options.', list_id: 5, completed: false },
     { name: 'Click an item to complete it.', list_id: 5, completed: false },
     { name: 'It keeps track of things.', list_id: 5, completed: false },
-    { name: 'This is lists', list_id: 5, completed: false },
+    { name: 'This is Lists.', list_id: 5, completed: false },
     { name: 'Items move to the bottom when they are completed.', list_id: 5, completed: true },
       ])
