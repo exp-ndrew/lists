@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   
   delete 'items/:id' => 'items#destroy' # delete an item
 
+  get 'lists/:id/clear_completed' => 'lists#update' # clear completed
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

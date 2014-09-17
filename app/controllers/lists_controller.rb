@@ -24,8 +24,13 @@ class ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
-    @list.update(params[:list])
-    redirect_to '/'
+    if request.fullpath.include?("clear_completed")
+      @list.clear_completed
+      redirect_to ("/lists/#{@list.id}")
+    else
+      @list.update(params[:list])
+      redirect_to '/'
+    end
   end
 
   def show

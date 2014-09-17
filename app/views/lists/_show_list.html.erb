@@ -7,7 +7,7 @@
         <a href="/" class="button split"><%= @list.name %><span data-dropdown="drop_top"></span></a>
         <ul id="drop_top" class="f-dropdown" data-dropdown-content>
           <li><a href="#" data-reveal-id="add_item">Add Item</a></li>
-          <li><a href="#">Clear Completed</a></li>
+          <li><a href="/lists/<%= @list.id %>/clear_completed">Clear Completed</a></li>
         </ul>
       </li>
       <% @list.items.where(:completed => false).each do |item| %>

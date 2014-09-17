@@ -4,7 +4,7 @@ An app to keep track of the lists in your life (to-do, grocery, play-, hit-, A-,
 
 ## currently working on
 
-* `Item.complete` action
+* "clear completed" function
 
 ## need to add
 

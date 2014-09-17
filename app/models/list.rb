@@ -3,9 +3,13 @@ class List < ActiveRecord::Base
   validates :name, :presence => true
   validates_uniqueness_of :name
 
+  default_scope {order("id desc")}
+
   def clear_completed
-    completed = self.where(:completed => true)
-    completed.destroy
+    completed = self.items.where(:completed => true)
+    completed.each do |item|
+      item.destroy
+    end
   end
 
 
