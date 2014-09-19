@@ -21,7 +21,7 @@ A live example is available at [http://xpndrw-lists.herokuapp.com](http://xpndrw
 
 1. Clone the repository using `$ git clone`
 1. Run `$ bundle install` to install gems
-1. Run `$ rake db:create` and `$ rake db:migrate` from the directory you cloned into
+1. Run `$ rake db:create db:migrate db:seed` from the directory you cloned into
 1. Run `$ rails s` to start the Rails server
 1. Open [http://localhost:3000](http://localhost:3000/) in a web browser to run the app.
 
